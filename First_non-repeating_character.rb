@@ -27,3 +27,9 @@ def max_gap(numbers)
     (1...numbers.size).each {|x| gap = [(numbers[x]-numbers[x-1]).abs,gap].max}
     gap
   end
+
+  # or
+
+  def max_gap(numbers)
+    numbers.sort.each_cons(2).map{|a,b| b-a}.max
+  end
